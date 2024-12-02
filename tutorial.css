@@ -1,0 +1,261 @@
+/* Tutorial Page Styles */
+.tutorial-page {
+    display: grid;
+    grid-template-columns: 1fr 300px;
+    gap: 2rem;
+    padding: 2rem;
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+.tutorial-header {
+    grid-column: 1 / -1;
+    margin-bottom: 2rem;
+}
+
+.progress-overview {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.progress-stat {
+    display: flex;
+    flex-direction: column;
+    min-width: 100px;
+}
+
+.stat-label {
+    font-size: 0.875rem;
+    color: var(--gray-600);
+}
+
+.stat-value {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--gray-900);
+}
+
+.progress-bar {
+    flex: 1;
+    height: 0.5rem;
+    background: var(--gray-100);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+}
+
+.progress {
+    height: 100%;
+    background: var(--primary);
+    border-radius: var(--radius-lg);
+    transition: width 0.3s ease;
+}
+
+/* Tutorial Grid */
+.tutorial-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.tutorial-track {
+    background: white;
+    border-radius: var(--radius-lg);
+    padding: 1.5rem;
+    box-shadow: var(--shadow-md);
+}
+
+.tutorial-track h2 {
+    font-size: 1.25rem;
+    color: var(--gray-900);
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--gray-100);
+}
+
+/* Tutorial Cards */
+.tutorial-card {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1.5rem;
+    background: var(--gray-50);
+    border-radius: var(--radius-lg);
+    margin-bottom: 1rem;
+    transition: var(--transition);
+}
+
+.tutorial-card:hover:not(.locked) {
+    background: var(--gray-100);
+}
+
+.card-status {
+    flex-shrink: 0;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.status-icon {
+    font-size: 1.5rem;
+}
+
+.tutorial-card.completed .status-icon {
+    color: var(--success);
+}
+
+.tutorial-card.locked .status-icon {
+    color: var(--gray-400);
+}
+
+.card-content {
+    flex: 1;
+}
+
+.card-content h3 {
+    margin: 0 0 0.25rem 0;
+    font-size: 1.125rem;
+    color: var(--gray-900);
+}
+
+.card-content p {
+    color: var(--gray-600);
+    font-size: 0.875rem;
+    margin-bottom: 0.5rem;
+}
+
+.tutorial-meta {
+    display: flex;
+    gap: 1rem;
+    font-size: 0.75rem;
+    color: var(--gray-500);
+}
+
+.tutorial-meta span {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+/* Progress Circle */
+.progress-circle {
+    width: 36px;
+    height: 36px;
+}
+
+.progress-circle svg {
+    transform: rotate(-90deg);
+    overflow: visible;
+}
+
+.progress-circle path {
+    stroke-linecap: round;
+}
+
+/* Tutorial Sidebar */
+.tutorial-sidebar {
+    position: sticky;
+    top: 2rem;
+    align-self: start;
+}
+
+.quick-help {
+    background: white;
+    border-radius: var(--radius-lg);
+    padding: 1.5rem;
+    box-shadow: var(--shadow-md);
+}
+
+.quick-help h3 {
+    margin: 0 0 1rem 0;
+    font-size: 1.125rem;
+    color: var(--gray-900);
+}
+
+.help-options {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.help-option {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem;
+    background: var(--gray-50);
+    border: none;
+    border-radius: var(--radius-md);
+    color: var(--gray-700);
+    font-size: 0.875rem;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.help-option:hover {
+    background: var(--gray-100);
+}
+
+.help-option .icon {
+    font-size: 1.25rem;
+}
+
+/* Track Specific Styles */
+.tutorial-track.beginner {
+    border-top: 4px solid var(--primary);
+}
+
+.tutorial-track.intermediate {
+    border-top: 4px solid var(--success);
+}
+
+.tutorial-track.advanced {
+    border-top: 4px solid var(--warning);
+}
+
+/* Locked State */
+.tutorial-card.locked {
+    opacity: 0.7;
+}
+
+.tutorial-card.locked button {
+    cursor: not-allowed;
+}
+
+/* Active State */
+.tutorial-card.active {
+    border: 2px solid var(--primary);
+    background: white;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .tutorial-page {
+        grid-template-columns: 1fr;
+    }
+    
+    .tutorial-sidebar {
+        position: static;
+        margin-top: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .tutorial-card {
+        flex-direction: column;
+        text-align: center;
+        padding: 1rem;
+    }
+    
+    .tutorial-meta {
+        justify-content: center;
+    }
+    
+    .progress-overview {
+        flex-direction: column;
+        align-items: stretch;
+    }
+}

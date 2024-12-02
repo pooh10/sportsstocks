@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to SportStocks</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="onboarding.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Simple Header -->
+    <header class="onboarding-header">
+        <div class="logo">
+            <i class="fas fa-chart-line"></i>
+            SportStocks
+        </div>
+    </header>
+
+    <main class="onboarding-flow">
+        <!-- Progress Bar -->
+        <div class="onboarding-progress">
+            <div class="progress-steps">
+                <div class="step active">Welcome</div>
+                <div class="step">Learn Basics</div>
+                <div class="step">Practice Trade</div>
+                <div class="step">Complete</div>
+            </div>
+            <div class="progress-bar">
+                <div class="progress" style="width: 25%"></div>
+            </div>
+        </div>
+
+        <!-- Step 1: Welcome -->
+        <section class="section onboarding-welcome active" data-step="1">
+            <h1>Welcome to SportStocks</h1>
+            <p class="subtitle">Trade your favorite athletes like stocks</p>
+
+            <div class="feature-cards">
+                <div class="card">
+                    <div class="card-icon">📈</div>
+                    <h3>Track Performance</h3>
+                    <p>Watch how your athletes perform and affect your portfolio</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">🏆</div>
+                    <h3>Invest Smart</h3>
+                    <p>Use real stats and data to make informed decisions</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">🎯</div>
+                    <h3>Learn Trading</h3>
+                    <p>Start with basics and become an expert investor</p>
+                </div>
+            </div>
+
+            <button class="button button--primary start-journey">Start Journey</button>
+        </section>
+
+        <!-- Step 2: Learn Basics -->
+        <section class="section onboarding-basics hidden" data-step="2">
+            <h2>Understanding Sports Stocks</h2>
+            
+            <div class="demo-market">
+                <div class="demo-player">
+                    <img src="/api/placeholder/120/120" alt="Victor Wembanyama" class="player-avatar">
+                    <div class="player-stats">
+                        <h3>Victor Wembanyama</h3>
+                        <p class="team">San Antonio Spurs</p>
+                        <div class="stock-price">
+                            <span class="current">$245.75</span>
+                            <span class="change positive">+12.3%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="explanation-points">
+                    <div class="point">
+                        <span class="number">1</span>
+                        <p>Athletes are like stocks - their value changes based on performance</p>
+                    </div>
+                    <div class="point">
+                        <span class="number">2</span>
+                        <p>Better performance = Higher value</p>
+                    </div>
+                    <div class="point">
+                        <span class="number">3</span>
+                        <p>Buy low, sell high to make profits</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="button-group">
+                <button class="button button--secondary prev-step">Back</button>
+                <button class="button button--primary next-step">Continue</button>
+            </div>
+        </section>
+
+        <!-- Step 3: Practice Trade -->
+        <section class="section onboarding-practice hidden" data-step="3">
+            <h2>Let's Make Your First Trade</h2>
+            
+            <div class="practice-trade">
+                <div class="trade-card">
+                    <h3>Practice Trade</h3>
+                    <p>Try buying some shares with practice money</p>
+
+                    <form class="trade-form">
+                        <div class="form-group">
+                            <label for="tradeAmount">Amount to Invest</label>
+                            <input type="number" 
+                                   id="tradeAmount" 
+                                   class="trade-amount" 
+                                   min="10" 
+                                   max="1000" 
+                                   placeholder="Enter amount"
+                                   required>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Estimated Shares</label>
+                            <div class="shares-preview">0.000 shares</div>
+                        </div>
+
+                        <button type="submit" class="button button--primary">Execute Trade</button>
+                    </form>
+
+                    <div class="trade-tips">
+                        <div class="tip">
+                            <i class="fas fa-lightbulb"></i>
+                            <p>Start small with practice trades to learn the basics</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="button-group">
+                <button class="button button--secondary prev-step">Back</button>
+            </div>
+        </section>
+
+        <!-- Step 4: Complete -->
+        <section class="section onboarding-complete hidden" data-step="4">
+            <div class="completion-message">
+                <div class="completion-icon">
+                    <i class="fas fa-check-circle"></i>
+                </div>
+
+                <h2>You're Ready to Start!</h2>
+                <p>Your practice trade was successful. Now let's explore the real market.</p>
+
+                <div class="next-steps">
+                    <div class="step-card">
+                        <h4>Explore Market</h4>
+                        <p>Browse available athletes</p>
+                    </div>
+                    <div class="step-card">
+                        <h4>Complete Profile</h4>
+                        <p>Set up your account</p>
+                    </div>
+                    <div class="step-card">
+                        <h4>Learn More</h4>
+                        <p>Take advanced tutorials</p>
+                    </div>
+                </div>
+
+                <button class="button button--primary enter-platform">Enter Platform</button>
+            </div>
+        </section>
+    </main>
+
+    <script src="onboarding.js"></script>
+</body>
+</html>

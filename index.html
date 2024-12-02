@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SportStocks - Trade Athletes Like Stocks</title>
+    <meta name="description" content="Invest in your favorite athletes with SportStocks - the platform that lets you trade athlete stocks based on performance">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.0/dist/chart.min.js"></script>
+</head>
+<body>
+    <!-- Accessibility Skip Link -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Navigation -->
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
+        <div class="nav-container">
+            <div class="nav-left">
+                <a href="index.html" class="logo" aria-label="SportStocks Home">
+                    <i class="fas fa-chart-line"></i>
+                    SportStocks
+                </a>
+                <div class="nav-tabs" role="tablist">
+                    <a href="index.html" class="nav-tab active" aria-current="page">Dashboard</a>
+                    <a href="portfolio.html" class="nav-tab">Portfolio</a>
+                    <a href="discover.html" class="nav-tab">Discover</a>
+                    <a href="learn.html" class="nav-tab">Learn</a>
+                    <a href="insights.html" class="nav-tab">Insights</a>
+                    <a href="beginner-dashboard.html" class="nav-tab">Start Trading</a>
+                </div>
+            </div>
+
+            <div class="search-container">
+                <label for="searchInput" class="visually-hidden">Search players or teams</label>
+                <input 
+                    type="search" 
+                    id="searchInput" 
+                    placeholder="Search players or teams..." 
+                    aria-label="Search players or teams"
+                >
+                <i class="fas fa-search" aria-hidden="true"></i>
+            </div>
+
+            <div class="nav-right">
+                <button class="notification-btn" aria-label="Notifications">
+                    <i class="fas fa-bell" aria-hidden="true"></i>
+                    <span class="badge" aria-label="3 unread notifications">3</span>
+                </button>
+                <div class="user-balance" aria-label="Current balance" data-tooltip="available-balance">
+                    <span class="balance-label">Balance:</span>
+                    <span class="balance-amount">$2,845.00</span>
+                </div>
+                <button class="help-btn" id="helpTrigger">
+                    <i class="fas fa-question-circle"></i>
+                    <span class="visually-hidden">Help</span>
+                </button>
+                <button class="tutorial-btn" id="tutorialTrigger">
+                    <i class="fas fa-graduation-cap"></i>
+                    <span class="visually-hidden">Tutorials</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main id="main-content" class="main-content">
+        <!-- Dashboard Stats Section -->
+        <section class="dashboard-stats" aria-label="Portfolio Statistics">
+            <div class="stats-grid">
+                <article class="stat-card portfolio-value" data-tooltip="total-value">
+                    <div class="stat-header">
+                        <h2>Portfolio Value</h2>
+                        <button class="info-btn" aria-label="Portfolio value information">
+                            <i class="fas fa-info-circle" aria-hidden="true"></i>
+                        </button>
+                    </div>
+                    <div class="stat-content">
+                        <p class="stat-amount">$12,458.32</p>
+                        <p class="trend positive" aria-label="Increase of 623 dollars and 12 cents">
+                            <i class="fas fa-arrow-up" aria-hidden="true"></i>
+                            +$623.12 (5.2%) <span class="period">Today</span>
+                        </p>
+                    </div>
+                </article>
+
+                <article class="stat-card risk-analysis" data-tooltip="risk-level">
+                    <div class="stat-header">
+                        <h2>Risk Analysis</h2>
+                        <button class="info-btn" aria-label="Risk analysis information">
+                            <i class="fas fa-info-circle" aria-hidden="true"></i>
+                        </button>
+                    </div>
+                    <div class="stat-content">
+                        <p class="risk-level">Moderate Risk</p>
+                        <div class="progress-bar" role="progressbar" aria-valuenow="72" aria-valuemin="0" aria-valuemax="100">
+                            <div class="progress" style="width: 72%"></div>
+                        </div>
+                        <p class="risk-score">72/100</p>
+                    </div>
+                </article>
+
+                <article class="stat-card quick-actions">
+                    <div class="stat-header">
+                        <h2>Quick Actions</h2>
+                    </div>
+                    <div class="action-grid">
+                        <button class="action-btn" aria-label="Quick Buy" data-tooltip="quick-buy">
+                            <i class="fas fa-bolt" aria-hidden="true"></i>
+                            Quick Buy
+                        </button>
+                        <button class="action-btn" aria-label="Set Alert" data-tooltip="set-alert">
+                            <i class="fas fa-bell" aria-hidden="true"></i>
+                            Set Alert
+                        </button>
+                        <button class="action-btn" aria-label="View Portfolio" data-tooltip="view-portfolio">
+                            <i class="fas fa-folder" aria-hidden="true"></i>
+                            Portfolio
+                        </button>
+                        <button class="action-btn" aria-label="View Analytics" data-tooltip="view-analytics">
+                            <i class="fas fa-chart-bar" aria-hidden="true"></i>
+                            Analytics
+                        </button>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Market Overview Section -->
+        <section class="market-overview" aria-label="Market Overview">
+            <div class="market-card">
+                <div class="market-header">
+                    <h2>Market Overview</h2>
+                    <div class="timeframe-selector" role="group" aria-label="Chart timeframe selection">
+                        <button class="timeframe-btn" data-timeframe="1D">1D</button>
+                        <button class="timeframe-btn active" data-timeframe="1W">1W</button>
+                        <button class="timeframe-btn" data-timeframe="1M">1M</button>
+                        <button class="timeframe-btn" data-timeframe="3M">3M</button>
+                        <button class="timeframe-btn" data-timeframe="1Y">1Y</button>
+                    </div>
+                </div>
+                <div class="chart-container">
+                    <canvas id="marketChart" aria-label="Market performance chart"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <!-- Player Market Section -->
+        <section class="player-market" aria-label="Player Market">
+            <div class="section-header">
+                <h2>Player Market</h2>
+                <div class="market-tabs" role="tablist">
+                    <button class="market-tab active" role="tab" aria-selected="true">Trending</button>
+                    <button class="market-tab" role="tab" aria-selected="false">Rookies</button>
+                    <button class="market-tab" role="tab" aria-selected="false">Watchlist</button>
+                </div>
+            </div>
+            <div id="playerGrid" class="player-grid">
+                <!-- Player cards will be dynamically inserted here -->
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal Container -->
+    <div class="modal-container">
+        <!-- Trade Modal -->
+        <div id="tradeModal" class="modal" role="dialog" aria-labelledby="modalTitle" aria-hidden="true">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 id="modalTitle">Trade Player</h3>
+                    <button class="close-btn" aria-label="Close modal">
+                        <i class="fas fa-times" aria-hidden="true"></i>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="trade-form" data-validation="trade">
+                        <div class="form-group">
+                            <label for="tradeQuantity">Quantity</label>
+                            <input type="number" 
+                                   id="tradeQuantity" 
+                                   min="0.01" 
+                                   step="0.01" 
+                                   value="1"
+                                   data-validation="amount"
+                                   data-min="0.01">
+                        </div>
+                        <div class="form-group">
+                            <label for="tradeTotal">Total Value</label>
+                            <output id="tradeTotal">$0.00</output>
+                        </div>
+                    </div>
+                    <div class="trade-actions">
+                        <button class="buy-btn">Buy</button>
+                        <button class="sell-btn">Sell</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Help Modal -->
+        <div id="helpModal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2>Need Help?</h2>
+                    <button class="close-btn" aria-label="Close help">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="help-options">
+                        <button class="help-option" data-action="tutorial">
+                            <i class="fas fa-play-circle"></i>
+                            Take the Tutorial
+                        </button>
+                        <button class="help-option" data-action="guide">
+                            <i class="fas fa-book"></i>
+                            View Guide
+                        </button>
+                        <button class="help-option" data-action="support">
+                            <i class="fas fa-headset"></i>
+                            Contact Support
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tutorial Modal -->
+        <div id="tutorialModal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>Welcome to SportStocks!</h3>
+                    <button class="close-btn" aria-label="Close tutorial">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="tutorial-steps">
+                        <!-- Tutorial content will be dynamically inserted -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script>
+        // Onboarding check
+        document.addEventListener('DOMContentLoaded', () => {
+            if (!localStorage.getItem('onboardingComplete')) {
+                if (!window.location.pathname.includes('onboarding.html')) {
+                    window.location.href = 'onboarding.html';
+                }
+            }
+        });
+    </script>
+
+    <!-- System Scripts -->
+    <script src="tooltips.js"></script>
+    <script src="validation.js"></script>
+    <script src="errors.js"></script>
+    <script src="tutorial.js"></script>
+    <script src="guided-trade.js"></script>
+    <script src="help-system.js"></script>
+    <script src="notifications.js"></script>
+    <script src="app.js"></script>
+
+    <!-- Initialize Systems -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Initialize all systems
+            window.tooltipSystem = new TooltipSystem();
+            window.validationSystem = new ValidationSystem();
+            window.errorSystem = new ErrorHandlingSystem();
+            
+            // Check if user is beginner
+            const isNewUser = localStorage.getItem('userExperience') === 'beginner';
+            if (isNewUser && typeof loadBeginnerDashboard === 'function') {
+                loadBeginnerDashboard();
+            }
+            
+            // Initialize help system
+            if (typeof initializeHelpSystem === 'function') {
+                initializeHelpSystem();
+            }
+        });
+    </script>
+</body>
+</html>

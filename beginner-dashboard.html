@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SportStocks - Beginner Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="beginner-dashboard.css">
+</head>
+<body>
+    <nav class="nav-container">
+        <div class="nav-left">
+            <div class="logo">SportStocks</div>
+            <div class="nav-tabs">
+                <a href="index.html" class="nav-tab active">Dashboard</a>
+                <a href="discover.html" class="nav-tab">Discover</a>
+                <a href="tutorial.html" class="nav-tab">Learn</a>
+                <div class="beginner-badge">Beginner Mode</div>
+            </div>
+        </div>
+        <div class="nav-right">
+            <div class="user-balance" data-tooltip="available-balance">
+                <span class="balance-label">Practice Balance:</span>
+                <span class="balance-amount">$10,000.00</span>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main-content beginner-dashboard">
+        <!-- Welcome Card -->
+        <section class="welcome-section">
+            <div class="welcome-card">
+                <div class="welcome-content">
+                    <h1>Welcome to SportStocks!</h1>
+                    <p>Start your trading journey with our guided experience</p>
+                    <div class="progress-tracker">
+                        <div class="progress-label">Getting Started Progress</div>
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 25%"></div>
+                        </div>
+                        <div class="progress-stats">2/8 tasks completed</div>
+                    </div>
+                </div>
+                <div class="next-task">
+                    <h3>Next Task:</h3>
+                    <div class="task-card">
+                        <div class="task-icon">🎯</div>
+                        <div class="task-details">
+                            <h4>Make Your First Trade</h4>
+                            <p>Learn how to invest in an athlete</p>
+                            <button class="button button--primary">Start Task</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Practice Portfolio -->
+        <section class="portfolio-section">
+            <h2>Practice Portfolio</h2>
+            <div class="portfolio-overview">
+                <div class="portfolio-card main-value" data-tooltip="portfolio-value">
+                    <div class="card-label">Total Value</div>
+                    <div class="card-value">$10,000.00</div>
+                    <div class="card-change positive">+$0.00 (0%)</div>
+                </div>
+                
+                <div class="quick-actions">
+                    <button class="action-btn" data-tooltip="practice-trade">
+                        <span class="icon">💰</span>
+                        Practice Trade
+                    </button>
+                    <button class="action-btn" data-tooltip="view-tutorial">
+                        <span class="icon">📚</span>
+                        View Tutorial
+                    </button>
+                    <button class="action-btn" data-tooltip="get-help">
+                        <span class="icon">❓</span>
+                        Get Help
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Athletes -->
+        <section class="featured-section">
+            <div class="section-header">
+                <h2>Recommended for Beginners</h2>
+                <div class="section-actions">
+                    <button class="button button--secondary">View All</button>
+                </div>
+            </div>
+            
+            <div class="featured-grid">
+                <!-- Example Athlete Card -->
+                <div class="athlete-card beginner-friendly" data-tooltip="athlete-info">
+                    <div class="athlete-header">
+                        <img src="/api/placeholder/80/80" alt="Athlete" class="athlete-avatar">
+                        <div class="athlete-info">
+                            <h3>Victor Wembanyama</h3>
+                            <p>San Antonio Spurs • PF/C</p>
+                            <span class="beginner-tag">Good for Beginners</span>
+                        </div>
+                    </div>
+                    
+                    <div class="athlete-stats">
+                        <div class="stat-item" data-tooltip="points-avg">
+                            <span class="stat-label">PPG</span>
+                            <span class="stat-value">20.5</span>
+                        </div>
+                        <div class="stat-item" data-tooltip="risk-level">
+                            <span class="stat-label">Risk</span>
+                            <span class="stat-value low">Low</span>
+                        </div>
+                        <div class="stat-item" data-tooltip="market-trend">
+                            <span class="stat-label">Trend</span>
+                            <span class="stat-value positive">↗</span>
+                        </div>
+                    </div>
+                    
+                    <div class="athlete-price">
+                        <div class="current-price" data-tooltip="current-price">$245.75</div>
+                        <div class="price-change positive">+12.3%</div>
+                    </div>
+                    
+                    <button class="button button--primary practice-trade-btn">Practice Trade</button>
+                </div>
+                
+                <!-- Add more athlete cards here -->
+            </div>
+        </section>
+
+        <!-- Learning Resources -->
+        <section class="learning-section">
+            <h2>Quick Learning Resources</h2>
+            <div class="resources-grid">
+                <div class="resource-card" data-tooltip="basic-concepts">
+                    <div class="resource-icon">📈</div>
+                    <h3>Understanding Sports Stocks</h3>
+                    <p>Learn how athlete performance affects stock value</p>
+                    <span class="duration">5 min read</span>
+                    <button class="button button--secondary">Read Guide</button>
+                </div>
+                
+                <div class="resource-card" data-tooltip="trading-basics">
+                    <div class="resource-icon">💡</div>
+                    <h3>Trading Basics</h3>
+                    <p>Master the fundamentals of trading</p>
+                    <span class="duration">10 min video</span>
+                    <button class="button button--secondary">Watch Video</button>
+                </div>
+                
+                <div class="resource-card" data-tooltip="risk-management">
+                    <div class="resource-icon">🛡️</div>
+                    <h3>Risk Management</h3>
+                    <p>Learn to protect your investments</p>
+                    <span class="duration">7 min read</span>
+                    <button class="button button--secondary">Read Guide</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Help Section -->
+        <section class="help-section">
+            <div class="help-card">
+                <div class="help-content">
+                    <h3>Need Help?</h3>
+                    <p>Our support team is here to assist you 24/7</p>
+                </div>
+                <div class="help-actions">
+                    <button class="button button--secondary">View FAQ</button>
+                    <button class="button button--primary">Contact Support</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div class="tutorial-overlay hidden">
+        <!-- Tutorial content will be dynamically added here -->
+    </div>
+
+    <script src="tooltips.js"></script>
+    <script src="validation.js"></script>
+    <script src="errors.js"></script>
+    <script src="beginner-dashboard.js"></script>
+</body>
+</html>

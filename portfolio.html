@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - SportStocks</title>
+    <meta name="description" content="Track your athlete investments and portfolio performance on SportStocks">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="portfolio.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-left">
+                <a href="index.html" class="logo">
+                    <i class="fas fa-chart-line"></i>
+                    SportStocks
+                </a>
+                <div class="nav-tabs">
+                    <a href="index.html" class="nav-tab">Dashboard</a>
+                    <a href="portfolio.html" class="nav-tab active">Portfolio</a>
+                    <a href="discover.html" class="nav-tab">Discover</a>
+                    <a href="learn.html" class="nav-tab">Learn</a>
+                    <a href="insights.html" class="nav-tab">Insights</a>
+                </div>
+            </div>
+            <div class="nav-right">
+                <button class="notification-btn">
+                    <i class="fas fa-bell"></i>
+                    <span class="badge">3</span>
+                </button>
+                <div class="user-balance">
+                    <span class="balance-label">Balance:</span>
+                    <span class="balance-amount">$2,845.00</span>
+                </div>
+                <button class="profile-btn">
+                    <i class="fas fa-user"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main-content portfolio-page">
+        <!-- Portfolio Summary -->
+        <section class="portfolio-summary">
+            <div class="summary-header">
+                <h1>My Portfolio</h1>
+                <div class="portfolio-actions">
+                    <button class="action-btn">
+                        <i class="fas fa-download"></i>
+                        Export
+                    </button>
+                    <button class="action-btn primary">
+                        <i class="fas fa-plus"></i>
+                        Add Investment
+                    </button>
+                </div>
+            </div>
+
+            <!-- Performance Cards -->
+            <div class="performance-grid">
+                <div class="performance-card total-value">
+                    <div class="card-header">
+                        <h3>Total Value</h3>
+                        <span class="trend positive">
+                            <i class="fas fa-arrow-up"></i>
+                            5.2%
+                        </span>
+                    </div>
+                    <div class="card-value">$12,458.32</div>
+                    <div class="card-subtitle">+$623.12 Today</div>
+                </div>
+
+                <div class="performance-card realized-gains">
+                    <div class="card-header">
+                        <h3>Realized Gains</h3>
+                        <span class="trend positive">
+                            <i class="fas fa-arrow-up"></i>
+                            3.8%
+                        </span>
+                    </div>
+                    <div class="card-value">$458.92</div>
+                    <div class="card-subtitle">This Month</div>
+                </div>
+
+                <div class="performance-card unrealized-gains">
+                    <div class="card-header">
+                        <h3>Unrealized Gains</h3>
+                        <span class="trend positive">
+                            <i class="fas fa-arrow-up"></i>
+                            7.4%
+                        </span>
+                    </div>
+                    <div class="card-value">$892.45</div>
+                    <div class="card-subtitle">Across Portfolio</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Portfolio Analysis -->
+        <section class="portfolio-analysis">
+            <div class="analysis-card">
+                <div class="card-header">
+                    <h2>Portfolio Performance</h2>
+                    <div class="timeframe-selector">
+                        <button class="timeframe-btn">1D</button>
+                        <button class="timeframe-btn active">1W</button>
+                        <button class="timeframe-btn">1M</button>
+                        <button class="timeframe-btn">3M</button>
+                        <button class="timeframe-btn">1Y</button>
+                        <button class="timeframe-btn">ALL</button>
+                    </div>
+                </div>
+                <div class="chart-container">
+                    <canvas id="performanceChart"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <!-- Holdings -->
+        <section class="holdings">
+            <div class="section-header">
+                <h2>Current Holdings</h2>
+                <div class="view-options">
+                    <button class="view-btn active">
+                        <i class="fas fa-table"></i>
+                        Table
+                    </button>
+                    <button class="view-btn">
+                        <i class="fas fa-chart-pie"></i>
+                        Distribution
+                    </button>
+                </div>
+            </div>
+
+            <div class="holdings-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Player</th>
+                            <th>Position</th>
+                            <th>Quantity</th>
+                            <th>Avg Price</th>
+                            <th>Current Price</th>
+                            <th>Total Value</th>
+                            <th>Return</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <div class="player-info">
+                                    <img src="/api/placeholder/32/32" alt="Player" class="player-avatar">
+                                    <div>
+                                        <div class="player-name">Victor Wembanyama</div>
+                                        <div class="player-team">San Antonio Spurs</div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>PF/C</td>
+                            <td>5.2</td>
+                            <td>$225.50</td>
+                            <td>$245.75</td>
+                            <td>$1,277.90</td>
+                            <td class="return positive">+8.98%</td>
+                            <td>
+                                <button class="action-btn small">Trade</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="player-info">
+                                    <img src="/api/placeholder/32/32" alt="Player" class="player-avatar">
+                                    <div>
+                                        <div class="player-name">Chet Holmgren</div>
+                                        <div class="player-team">Oklahoma City Thunder</div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>PF/C</td>
+                            <td>3.8</td>
+                            <td>$185.25</td>
+                            <td>$198.50</td>
+                            <td>$754.30</td>
+                            <td class="return positive">+7.15%</td>
+                            <td>
+                                <button class="action-btn small">Trade</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Recent Activity -->
+        <section class="recent-activity">
+            <div class="section-header">
+                <h2>Recent Activity</h2>
+                <button class="view-all-btn">View All</button>
+            </div>
+            <div class="activity-list">
+                <div class="activity-item">
+                    <div class="activity-icon buy">
+                        <i class="fas fa-arrow-up"></i>
+                    </div>
+                    <div class="activity-details">
+                        <div class="activity-header">
+                            <span class="activity-type">Bought</span>
+                            <span class="activity-time">2 hours ago</span>
+                        </div>
+                        <div class="activity-description">
+                            Bought 1.5 VW at $245.75
+                        </div>
+                    </div>
+                    <div class="activity-value">
+                        -$368.63
+                    </div>
+                </div>
+                <div class="activity-item">
+                    <div class="activity-icon sell">
+                        <i class="fas fa-arrow-down"></i>
+                    </div>
+                    <div class="activity-details">
+                        <div class="activity-header">
+                            <span class="activity-type">Sold</span>
+                            <span class="activity-time">5 hours ago</span>
+                        </div>
+                        <div class="activity-description">
+                            Sold 2.0 CH at $198.50
+                        </div>
+                    </div>
+                    <div class="activity-value positive">
+                        +$397.00
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="portfolio.js"></script>
+</body>
+<script>
+		if (!localStorage.getItem('onboardingComplete')) {
+    	window.location.href = 'onboarding/welcome.html';
+	}
+	</script>
+</html>

@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discover - SportStocks</title>
+    <meta name="description" content="Discover new investment opportunities in athletes on SportStocks">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="discover.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-left">
+                <a href="index.html" class="logo">
+                    <i class="fas fa-chart-line"></i>
+                    SportStocks
+                </a>
+                <div class="nav-tabs">
+                    <a href="index.html" class="nav-tab">Dashboard</a>
+                    <a href="portfolio.html" class="nav-tab">Portfolio</a>
+                    <a href="discover.html" class="nav-tab active">Discover</a>
+                    <a href="learn.html" class="nav-tab">Learn</a>
+                    <a href="insights.html" class="nav-tab">Insights</a>
+                </div>
+            </div>
+            <div class="search-container">
+                <input type="search" id="searchInput" placeholder="Search players, teams, or leagues...">
+                <i class="fas fa-search"></i>
+            </div>
+            <div class="nav-right">
+                <button class="notification-btn">
+                    <i class="fas fa-bell"></i>
+                    <span class="badge">3</span>
+                </button>
+                <div class="user-balance">
+                    <span class="balance-label">Balance:</span>
+                    <span class="balance-amount">$2,845.00</span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main-content discover-page">
+        <!-- Discover Header -->
+        <section class="discover-header">
+            <h1>Discover Opportunities</h1>
+            <div class="filters">
+                <div class="filter-group">
+                    <label for="sportSelect">Sport</label>
+                    <select id="sportSelect" class="filter-select">
+                        <option value="all">All Sports</option>
+                        <option value="basketball">Basketball</option>
+                        <option value="football">Football</option>
+                        <option value="soccer">Soccer</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="leagueSelect">League</label>
+                    <select id="leagueSelect" class="filter-select">
+                        <option value="all">All Leagues</option>
+                        <option value="nba">NBA</option>
+                        <option value="nfl">NFL</option>
+                        <option value="mlb">MLB</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="positionSelect">Position</label>
+                    <select id="positionSelect" class="filter-select">
+                        <option value="all">All Positions</option>
+                        <option value="guard">Guard</option>
+                        <option value="forward">Forward</option>
+                        <option value="center">Center</option>
+                    </select>
+                </div>
+                <button class="filter-btn">
+                    <i class="fas fa-sliders-h"></i>
+                    More Filters
+                </button>
+            </div>
+        </section>
+
+        <!-- Featured Opportunities -->
+        <section class="featured-section">
+            <h2>Featured Opportunities</h2>
+            <div class="featured-grid">
+                <div class="featured-card rising-stars">
+                    <div class="card-content">
+                        <h3>Rising Stars</h3>
+                        <p>Discover emerging talents with high growth potential</p>
+                        <button class="action-btn">Explore</button>
+                    </div>
+                    <div class="card-stats">
+                        <div class="stat">
+                            <span class="stat-label">Avg. Return</span>
+                            <span class="stat-value positive">+24.5%</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-label">Risk Level</span>
+                            <span class="stat-value">Moderate</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="featured-card value-picks">
+                    <div class="card-content">
+                        <h3>Value Picks</h3>
+                        <p>Undervalued players with strong fundamentals</p>
+                        <button class="action-btn">Explore</button>
+                    </div>
+                    <div class="card-stats">
+                        <div class="stat">
+                            <span class="stat-label">Avg. Return</span>
+                            <span class="stat-value positive">+15.8%</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-label">Risk Level</span>
+                            <span class="stat-value">Low</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="featured-card high-performers">
+                    <div class="card-content">
+                        <h3>Top Performers</h3>
+                        <p>Leading athletes with consistent growth</p>
+                        <button class="action-btn">Explore</button>
+                    </div>
+                    <div class="card-stats">
+                        <div class="stat">
+                            <span class="stat-label">Avg. Return</span>
+                            <span class="stat-value positive">+18.2%</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-label">Risk Level</span>
+                            <span class="stat-value">Medium</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Market Trends -->
+        <section class="trends-section">
+            <div class="section-header">
+                <h2>Market Trends</h2>
+                <div class="view-selector">
+                    <button class="view-btn active">Trending</button>
+                    <button class="view-btn">Most Traded</button>
+                    <button class="view-btn">Price Changes</button>
+                </div>
+            </div>
+            <div class="trends-grid" id="trendsGrid">
+                <!-- Trend cards will be dynamically inserted here -->
+            </div>
+        </section>
+
+        <!-- Watchlist -->
+        <section class="watchlist-section">
+            <div class="section-header">
+                <h2>Your Watchlist</h2>
+                <button class="manage-btn">
+                    <i class="fas fa-cog"></i>
+                    Manage
+                </button>
+            </div>
+            <div class="watchlist-grid" id="watchlistGrid">
+                <!-- Watchlist items will be dynamically inserted here -->
+            </div>
+        </section>
+
+        <!-- Recommendations -->
+        <section class="recommendations-section">
+            <div class="section-header">
+                <h2>Recommended for You</h2>
+                <div class="recommendation-tags">
+                    <button class="tag-btn active">Based on Portfolio</button>
+                    <button class="tag-btn">Similar Players</button>
+                    <button class="tag-btn">Popular</button>
+                </div>
+            </div>
+            <div class="recommendations-grid" id="recommendationsGrid">
+                <!-- Recommendation cards will be dynamically inserted here -->
+            </div>
+        </section>
+
+        <!-- Research Tools -->
+        <section class="research-tools">
+            <h2>Research Tools</h2>
+            <div class="tools-grid">
+                <div class="tool-card">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>Performance Analytics</h3>
+                    <p>Deep dive into player statistics and performance trends</p>
+                    <button class="tool-btn">Open Tool</button>
+                </div>
+                <div class="tool-card">
+                    <i class="fas fa-search-dollar"></i>
+                    <h3>Value Scanner</h3>
+                    <p>Find undervalued players based on performance metrics</p>
+                    <button class="tool-btn">Open Tool</button>
+                </div>
+                <div class="tool-card">
+                    <i class="fas fa-comments"></i>
+                    <h3>Community Insights</h3>
+                    <p>See what other investors are saying and thinking</p>
+                    <button class="tool-btn">Join Discussion</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Advanced Filters Modal -->
+    <div id="filtersModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Advanced Filters</h3>
+                <button class="close-btn">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <!-- Filter groups will be dynamically inserted here -->
+            </div>
+            <div class="modal-footer">
+                <button class="reset-btn">Reset Filters</button>
+                <button class="apply-btn">Apply Filters</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="discover.js"></script>
+</body>
+</html>
