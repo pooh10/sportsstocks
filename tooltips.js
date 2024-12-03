@@ -7,6 +7,12 @@ class TooltipSystem {
             'realized-gains': 'Profit/loss from completed trades',
             'unrealized-gains': 'Potential profit/loss from current holdings',
             'portfolio-risk': 'Overall risk assessment of your investments',
+  			'available-balance': 'Your available funds for making new trades',
+  			'risk-level': 'Your portfolio\'s overall risk assessment based on volatility and diversification',
+  			'quick-buy': 'Instantly purchase shares of trending athletes',
+  			'set-alert': 'Create price and performance alerts for athletes',
+  			'view-portfolio': 'See detailed breakdown of your investments',
+  			'view-analytics': 'Advanced performance metrics and analysis',
             
             // Trading tooltips
             'market-price': 'Current trading price based on recent performance',
@@ -28,7 +34,36 @@ class TooltipSystem {
             // Learning section
             'beginner-track': 'Start here to learn the basics of sports trading',
             'intermediate-track': 'Advanced strategies for experienced traders',
-            'advanced-track': 'Expert-level analysis and trading techniques'
+            'advanced-track': 'Expert-level analysis and trading techniques',
+            
+            // Stats tooltips
+			'market-cap': 'The total market value of a company\'s outstanding shares',
+			'trading-volume': 'The total number of shares traded within a specific time period',
+			'active-traders': 'The number of participants actively buying and selling right now',
+			
+			// Portfolio tooltips
+			'available-balance': 'Your current practice balance available for trades',
+			'portfolio-value': 'The total value of your practice investments, including gains or losses',
+
+			// Actions tooltips
+			'practice-trade': 'Try trading with virtual funds to learn the process',
+			'view-tutorial': 'Open a tutorial to learn more about trading basics',
+			'get-help': 'Access resources or contact support for assistance',
+
+			// Stats tooltips
+			'athlete-info': 'Basic information about the athlete, including team and position',
+			'points-avg': 'Average points per game for the athlete this season',
+			'risk-level': 'Indicates the risk of investing in this athlete based on their performance',
+			'market-trend': 'The recent trend of the athlete\'s stock price',
+
+			// Price tooltips
+			'current-price': 'The current trading price of the athlete\'s stock',
+			
+			// Stats tooltips
+			'basic-concepts': 'An overview of how athlete performance can influence their stock value in the market',
+			'trading-basics': 'Essential principles of trading to help you get started with investments',
+			'risk-management': 'Strategies for minimizing risks and protecting your investments in the market',
+
         };
 
         this.activeTooltip = null;

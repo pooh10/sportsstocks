@@ -200,8 +200,8 @@ td {
 }
 
 .player-avatar {
-    width: 2rem;
-    height: 2rem;
+    width: 6rem;
+    height: 6rem;
     border-radius: 50%;
     object-fit: cover;
 }

@@ -768,3 +768,75 @@ button:disabled {
         padding: 0;
     }
 }
+
+
+
+/* confirm-dialog.css */
+.confirm-dialog {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 100;
+}
+
+.confirm-dialog.active {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.confirm-dialog__content {
+    background: white;
+    border-radius: var(--radius-lg);
+    padding: 1.5rem;
+    width: 90%;
+    max-width: 400px;
+}
+
+.confirm-dialog__title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--gray-900);
+    margin-bottom: 0.5rem;
+}
+
+.confirm-dialog__message {
+    color: var(--gray-600);
+    margin-bottom: 1.5rem;
+}
+
+.confirm-dialog__actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+}
+
+/* Add at the bottom */
+.loading {
+  opacity: 0.6;
+  position: relative;
+}
+.loading::after {
+  content: "Updating...";
+  position: absolute;
+  top: 50%; 
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 0.5rem;
+  border-radius: var(--radius-md);
+}
+
+/* Add at bottom */
+.search-box {
+  margin-bottom: 1rem;
+}
+
+.search-input {
+  padding: 0.5rem;
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-md);
+  width: 100%;
+  max-width: 300px;
+}

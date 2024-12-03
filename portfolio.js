@@ -1,5 +1,7 @@
 // Portfolio Controller
 class PortfolioController {
+
+	
     constructor() {
         this.performanceChart = null;
         this.portfolioData = {
@@ -171,6 +173,25 @@ class PortfolioController {
                 this.toggleHoldingsView(e.target.textContent.trim());
             });
         });
+        
+        // Add inside setupEventListeners() method
+		document.querySelectorAll('[data-tooltip]').forEach(el => {
+  		el.addEventListener('mouseover', e => {
+    		const tip = document.createElement('div'); 
+    		tip.className = 'tooltip';
+    		tip.textContent = e.target.dataset.tooltip;
+    		document.body.appendChild(tip);
+  		});
+		});
+		
+		// Add inside setupEventListeners() method  
+		document.querySelector('.search-input')?.addEventListener('input', e => {
+  		const value = e.target.value.toLowerCase();
+  		const filtered = this.portfolioData.holdings.filter(h => 
+    		h.name.toLowerCase().includes(value)
+  		);
+  		this.refreshHoldingsTable(filtered);
+		});
 
         // Trade buttons
         document.querySelectorAll('.holdings-table .action-btn').forEach(btn => {
@@ -236,13 +257,26 @@ class PortfolioController {
 
     refreshHoldingsTable() {
         const tbody = document.querySelector('.holdings-table tbody');
+        
+        // Add at start of refreshHoldingsTable() method
+		document.querySelectorAll('th').forEach(header => {
+  		if(header.dataset.column) {
+    		header.style.cursor = 'pointer';
+    		header.addEventListener('click', () => {
+      		const column = header.dataset.column;
+      		this.portfolioData.holdings.sort((a,b) => a[column] - b[column]);
+      		this.refreshHoldingsTable();
+    		});
+  		}
+		});
+        
         if (!tbody) return;
 
         tbody.innerHTML = this.portfolioData.holdings.map(holding => `
             <tr data-player-id="${holding.id}">
                 <td>
                     <div class="player-info">
-                        <img src="/api/placeholder/32/32" alt="${holding.name}" class="player-avatar">
+                        <img src="${holding.id === 1 ? 'victor.jpg' : 'chet.png'}" alt="${holding.name}" class="player-avatar">
                         <div>
                             <div class="player-name">${holding.name}</div>
                             <div class="player-team">${holding.team}</div>

@@ -6,13 +6,15 @@
     <title>SportStocks - Beginner Dashboard</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="beginner-dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
 </head>
 <body>
     <nav class="nav-container">
         <div class="nav-left">
             <div class="logo">SportStocks</div>
             <div class="nav-tabs">
-                <a href="index.html" class="nav-tab active">Dashboard</a>
+                <a href="index.html" class="nav-tab">Dashboard</a>
                 <a href="discover.html" class="nav-tab">Discover</a>
                 <a href="tutorial.html" class="nav-tab">Learn</a>
                 <div class="beginner-badge">Beginner Mode</div>
@@ -93,9 +95,9 @@
             
             <div class="featured-grid">
                 <!-- Example Athlete Card -->
-                <div class="athlete-card beginner-friendly" data-tooltip="athlete-info">
+                <div class="athlete-card beginner-friendly">
                     <div class="athlete-header">
-                        <img src="/api/placeholder/80/80" alt="Athlete" class="athlete-avatar">
+                        <img src="victor.jpg" alt="Athlete" class="athlete-avatar">
                         <div class="athlete-info">
                             <h3>Victor Wembanyama</h3>
                             <p>San Antonio Spurs • PF/C</p>
@@ -104,22 +106,22 @@
                     </div>
                     
                     <div class="athlete-stats">
-                        <div class="stat-item" data-tooltip="points-avg">
+                        <div class="stat-item">
                             <span class="stat-label">PPG</span>
                             <span class="stat-value">20.5</span>
                         </div>
-                        <div class="stat-item" data-tooltip="risk-level">
+                        <div class="stat-item">
                             <span class="stat-label">Risk</span>
                             <span class="stat-value low">Low</span>
                         </div>
-                        <div class="stat-item" data-tooltip="market-trend">
+                        <div class="stat-item">
                             <span class="stat-label">Trend</span>
                             <span class="stat-value positive">↗</span>
                         </div>
                     </div>
                     
                     <div class="athlete-price">
-                        <div class="current-price" data-tooltip="current-price">$245.75</div>
+                        <div class="current-price">$245.75</div>
                         <div class="price-change positive">+12.3%</div>
                     </div>
                     
@@ -180,8 +182,6 @@
     </div>
 
     <script src="tooltips.js"></script>
-    <script src="validation.js"></script>
-    <script src="errors.js"></script>
     <script src="beginner-dashboard.js"></script>
 </body>
 </html>

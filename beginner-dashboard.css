@@ -216,8 +216,8 @@
 }
 
 .athlete-avatar {
-    width: 80px;
-    height: 80px;
+    width: 180px;
+    height: 180px;
     border-radius: var(--radius-lg);
     object-fit: cover;
 }
